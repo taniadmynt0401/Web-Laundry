@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mister Laundry</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hero-section {
+            display: flex;
+            align-items: center;
+            height: 100vh;
+        }
+        .hero-section .col-md-6 {
+            margin-top: 10%;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #555;
+        }
+        .about-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        .services-section {
+            padding: 60px 0;
+        }
+        .services-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .service-box {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: transform 0.3s;
+        }
+        .service-box:hover {
+            transform: translateY(-10px);
+        }
+        .service-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .service-box p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #555;
+        }
+        .features-section {
+            padding: 60px 0;
+        }
+        .features-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .feature-box {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .feature-box:hover {
+            background-color: #007bff;
+            transform: translateY(-10px);
+            color: white;
+        }
+        .feature-box img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+        .feature-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .feature-box p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: inherit;
+        }
+        .faq-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.faq-box {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-section {
+    padding: 60px 0;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-section .form-group {
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    text-align: left;
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.faq-box {
+    margin-bottom: 10px;
+}
+
+.plus-minus {
+    font-size: 1.5rem;
+}
+
+.news-section {
+    padding: 60px 0;
+    background-color: #f8f9fa; /* Warna latar belakang dapat disesuaikan */
+}
+
+.news-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333; /* Warna teks dapat disesuaikan */
+}
+
+.news-section p {
+    font-size: 1.2rem;
+    color: #666; /* Warna teks dapat disesuaikan */
+    margin-bottom: 40px;
+}
+
+.news-article {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.news-article img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.news-article h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.news-article p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.news-article .read-more {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-article .read-more:hover {
+    text-decoration: underline;
+}
+
+.recent-posts {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.recent-posts h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.recent-posts ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recent-posts ul li {
+    margin-bottom: 10px;
+}
+
+.recent-posts ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.recent-posts ul li a:hover {
+    text-decoration: underline;
+}
+
+.recent-posts, .archives, .categories {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.recent-posts h3, .archives h3, .categories h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.recent-posts ul, .archives ul, .categories ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recent-posts ul li, .archives ul li, .categories ul li {
+    margin-bottom: 10px;
+}
+
+.recent-posts ul li a, .archives ul li a, .categories ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.recent-posts ul li a:hover, .archives ul li a:hover, .categories ul li a:hover {
+    text-decoration: underline;
+}
+
+.pricing-box {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.pricing-box h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.pricing-box .item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.pricing-box .item span:first-child {
+    color: #333;
+}
+
+.pricing-box p {
+    display: none;
+}
+
+.pricing-box.active p {
+    display: block;
+}
+
+.garansi-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.garansi-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.garansi-section p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.garansi-section .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content form label {
+    margin: 10px 0 5px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.modal-content form input,
+.modal-content form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.modal-content form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-primary">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <a class="navbar-brand" href="#">Mister Laundry</a>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#faq">Faq</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#news">News</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#pricing">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <h1 class="display-4">Mister Laundry</h1>
+                    <p class="lead">Mister Laundry melayani Laundry Bayi seperti stroller bayi, car seat bayi, dan lain-lain. Kami juga menyediakan jasa laundry lainnya seperti laundry kiloan, satuan, sepatu dan masih banyak lagi.</p>
+                    <a href="#" class="btn btn-primary">Request Pick Up</a>
+                    <a href="#" class="btn btn-secondary">WA +6285726043569</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="Wasmachine _ Premium Vector.jpeg" alt="Illustration" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>About Us</h2>
+                    <p>Mister Laundry didirikan dengan tujuan memberikan layanan laundry yang berkualitas tinggi dan terpercaya bagi masyarakat. Kami memahami pentingnya kebersihan dan kerapihan dalam kehidupan sehari-hari, oleh karena itu kami berkomitmen untuk memberikan pelayanan terbaik kepada setiap pelanggan.</p>
+                    <p>Dengan berbagai layanan yang kami tawarkan seperti laundry bayi, laundry kiloan, satuan, sepatu, dan lainnya, kami memastikan bahwa setiap item ditangani dengan hati-hati dan menggunakan teknologi serta bahan pembersih yang ramah lingkungan. Tim kami terdiri dari profesional yang berpengalaman dan berdedikasi untuk memenuhi kebutuhan Anda.</p>
+                    <p>Visi kami adalah menjadi pilihan utama dalam layanan laundry dengan memberikan hasil yang memuaskan dan pelayanan yang ramah. Kami terus berinovasi dan berusaha meningkatkan kualitas layanan kami untuk memastikan kepuasan pelanggan yang maksimal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Our Services</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-box text-center">
+                        <h3>Dry Cleaning</h3>
+                        <p>Kami menawarkan layanan dry cleaning untuk pakaian formal dan bahan-bahan yang membutuhkan perawatan khusus.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box text-center">
+                        <h3>Laundry Kiloan</h3>
+                        <p>Laundry kiloan dengan harga terjangkau dan hasil yang memuaskan untuk kebutuhan sehari-hari Anda.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box text-center">
+                        <h3>Laundry Satuan</h3>
+                        <p>Laundry satuan untuk pakaian-pakaian yang memerlukan perhatian khusus dan perawatan ekstra.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box text-center">
+                        <h3>Laundry Sepatu</h3>
+                        <p>Layanan khusus untuk membersihkan sepatu dengan metode yang tepat untuk menjaga kualitas sepatu Anda.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box text-center">
+                        <h3>Laundry Bayi</h3>
+                        <p>Layanan laundry untuk perlengkapan bayi seperti stroller, car seat, dan pakaian bayi dengan bahan yang aman.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box text-center">
+                        <h3>Free Delivery</h3>
+                        <p>Kami menyediakan layanan antar-jemput gratis untuk memberikan kenyamanan lebih bagi pelanggan kami.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Our Features</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="feature-box">
+                        <img src="path/to/icon1.png" alt="Icon 1">
+                        <div>
+                            <h3>Eco-Friendly Dry Cleaning</h3>
+                            <p>Komitmen kami ramah lingkungan lebih dari sekadar penggunaan teknik pembersihan yang 100% bebas chemical. Perusahaan kami juga sangat bangga menjadi bisnis yang netral karbon.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-box">
+                        <img src="path/to/icon2.png" alt="Icon 2">
+                        <div>
+                            <h3>Wash & Fold</h3>
+                            <p>Kami sangat bersemangat untuk menawarkan minor repair; layanan tas bersama dengan layanan dry cleaning dan cuci; layanan lipat. Staf kami menggunakan produk dengan kualitas terbaik.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-box">
+                        <img src="path/to/icon3.png" alt="Icon 3">
+                        <div>
+                            <h3>Bag & Shoe Repairs & Shines</h3>
+                            <p>Kami menawarkan layanan laundry satu hari kepada pelanggan di area layanan kami, menggabungkan keunggulan dry cleaning dengan kenyamanan tertinggi dalam layanan laundry dan pengiriman.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-box">
+                        <img src="path/to/icon4.png" alt="Icon 4">
+                        <div>
+                            <h3>Package Delivery</h3>
+                            <p>Mencuci adalah layanan paling nyaman yang dicari orang. Mencuci adalah salah satu tugas tersulit yang harus kita tangani secara rutin.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="promo dan kupon" class="promo dan kupon-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Promo dan Kupon</h2>
+                </div>
+            </div>
+
+   <!-- Promo and Coupons Section -->
+
+
+<!-- Print Modal -->
+<div class="modal fade" id="printModal" tabindex="-1" role="dialog" aria-labelledby="printModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="printModalLabel">Print Coupon</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalContent">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="printCoupon()">Print</button>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="promo" class="promo-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="promo-box text-center">
+                    <div class="coupon">
+                        <h3>GetwashLaundry</h3>
+                        <p>Jl. Ceger Raya No.42 Jurang Mangu Barat, Kec. Pd. Aren, Kota Tangerang Selatan, Banten 15222</p>
+                        <p>info@getwashlaundry.id</p>
+                        <h3>8K OFF</h3>
+                        <p>Wash & Fold 8K Order</p>
+                        <p>Expires: 31/1/2023</p>
+                        <button class="btn btn-primary print-button" onclick="showPrintModal('printableContent1')">Print Coupon</button>
+                    </div>
+                    <div id="printableContent1" class="print-content">
+                        <h3>GetwashLaundry</h3>
+                        <p>Jl. Ceger Raya No.42 Jurang Mangu Barat, Kec. Pd. Aren, Kota Tangerang Selatan, Banten 15222</p>
+                        <p>info@getwashlaundry.id</p>
+                        <h3>8K OFF</h3>
+                        <p>Wash & Fold 8K Order</p>
+                        <p>Expires: 31/1/2023</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="promo-box text-center">
+                    <div class="coupon">
+                        <h3>GetwashLaundry</h3>
+                        <p>Jl. Ceger Raya No.42 Jurang Mangu Barat, Kec. Pd. Aren, Kota Tangerang Selatan, Banten 15222</p>
+                        <p>info@getwashlaundry.id</p>
+                        <h3>FREE DRY</h3>
+                        <p>with Self Serve Wash</p>
+                        <p>Expires: 31/1/2023</p>
+                        <button class="btn btn-primary print-button" onclick="showPrintModal('printableContent2')">Print Coupon</button>
+                    </div>
+                    <div id="printableContent2" class="print-content">
+                        <h3>GetwashLaundry</h3>
+                        <p>Jl. Ceger Raya No.42 Jurang Mangu Barat, Kec. Pd. Aren, Kota Tangerang Selatan, Banten 15222</p>
+                        <p>info@getwashlaundry.id</p>
+                        <h3>FREE DRY</h3>
+                        <p>with Self Serve Wash</p>
+                        <p>Expires: 31/1/2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="faq" class="faq-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>FAQ</h2>
+                <img src="image.png" alt="Pertanyaan yang Sering Diajukan" class="img-fluid mt-3 mb-4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="faq-box">
+                    <button class="faq-question" onclick="toggleAnswer('faq1')">
+                        <span>1. Apa layanan yang ditawarkan oleh Mister Laundry?</span>
+                        <span class="plus-minus">+</span>
+                    </button>
+                    <div id="faq1" class="faq-answer">
+                        <p>Kami menawarkan berbagai layanan laundry termasuk laundry kiloan, laundry satuan, laundry bayi, dry cleaning, dan laundry sepatu. Kami juga menyediakan layanan antar-jemput gratis.</p>
+                    </div>
+                </div>
+                <div class="faq-box">
+                    <button class="faq-question" onclick="toggleAnswer('faq2')">
+                        <span>2. Bagaimana cara memesan layanan pick-up?</span>
+                        <span class="plus-minus">+</span>
+                    </button>
+                    <div id="faq2" class="faq-answer">
+                        <p>Anda dapat memesan layanan pick-up melalui tombol "Request Pick Up" di halaman utama atau menghubungi kami melalui WhatsApp di +6285726043569.</p>
+                    </div>
+                </div>
+                <div class="faq-box">
+                    <button class="faq-question" onclick="toggleAnswer('faq3')">
+                        <span>3. Apakah Mister Laundry menggunakan bahan pembersih ramah lingkungan?</span>
+                        <span class="plus-minus">+</span>
+                    </button>
+                    <div id="faq3" class="faq-answer">
+                        <p>Ya, kami berkomitmen untuk menggunakan teknologi dan bahan pembersih yang ramah lingkungan untuk menjaga kualitas layanan kami dan mendukung lingkungan yang bersih.</p>
+                    </div>
+                </div>
+                <div class="faq-box">
+                    <button class="faq-question" onclick="toggleAnswer('faq4')">
+                        <span>4. Berapa lama waktu yang dibutuhkan untuk proses laundry?</span>
+                        <span class="plus-minus">+</span>
+                    </button>
+                    <div id="faq4" class="faq-answer">
+                        <p>Waktu proses laundry tergantung pada jenis layanan yang Anda pilih. Untuk laundry kiloan dan satuan, biasanya memerlukan waktu 2-3 hari. Layanan khusus seperti dry cleaning mungkin memerlukan waktu lebih lama.</p>
+                    </div>
+                </div>
+                <div class="faq-box">
+                    <button class="faq-question" onclick="toggleAnswer('faq5')">
+                        <span>5. Apakah ada jaminan untuk barang yang hilang atau rusak?</span>
+                        <span class="plus-minus">+</span>
+                    </button>
+                    <div id="faq5" class="faq-answer">
+                        <p>Kami selalu berusaha memberikan layanan terbaik dan menjaga keamanan barang Anda. Namun, jika terjadi kehilangan atau kerusakan, kami akan bertanggung jawab sesuai dengan kebijakan kami yang berlaku.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="additional-questions" class="additional-questions-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Masih Ada Pertanyaan?</h2>
+                <p>Kami akan menjawabnya. Kami berharap dapat membantu Anda menciptakan dan memelihara lingkungan yang bersih dan sehat, menyenangkan sekaligus fungsional.</p>
+            </div>
+        </div>
+    </div>
+</section>
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="news" class="news-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Berita Terbaru</h2>
+                <p>Temukan informasi terbaru dan artikel menarik seputar layanan laundry kami.</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Artikel Berita 1 -->
+            <div class="col-md-4">
+                <div class="news-article">
+                    <img src="path/to/image1.jpg" alt="Berita 1">
+                    <h3>Judul Berita 1</h3>
+                    <p>Ringkasan singkat dari berita 1.</p>
+                    <a href="link/to/full-article1" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </div>
+            <!-- Artikel Berita 2 -->
+            <div class="col-md-4">
+                <div class="news-article">
+                    <img src="path/to/image2.jpg" alt="Berita 2">
+                    <h3>Judul Berita 2</h3>
+                    <p>Ringkasan singkat dari berita 2.</p>
+                    <a href="link/to/full-article2" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </div>
+            <!-- Artikel Berita 3 -->
+            <div class="col-md-4">
+                <div class="news-article">
+                    <img src="path/to/image3.jpg" alt="Berita 3">
+                    <h3>Judul Berita 3</h3>
+                    <p>Ringkasan singkat dari berita 3.</p>
+                    <a href="link/to/full-article3" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </div>
+            <!-- Recent Posts -->
+            <div class="col-md-4">
+                <div class="recent-posts">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        <li><a href="link/to/post1">Begini Cara Mencuci Sepatu Gunung yang Benar</a></li>
+                        <li><a href="link/to/post2">Cara Mencuci Jaket Bulu Angsa Supaya Tidak Merusak Bahan</a></li>
+                        <li><a href="link/to/post3">5 Rekomendasi Laundry Terbaik di Indonesia</a></li>
+                        <li><a href="link/to/post4">Mister Laundry Luncurkan 7 Tahap Proses Pencucian Pakaian untuk Layanan Terbaik</a></li>
+                        <li><a href="link/to/post5">Sejarah Denim, Karakteristik, dan Penggunaannya</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Archives -->
+            <div class="col-md-4">
+                <div class="archives">
+                    <h3>Archives</h3>
+                    <ul>
+                        <li><a href="link/to/archive1">June 2024</a></li>
+                        <li><a href="link/to/archive2">April 2024</a></li>
+                        <li><a href="link/to/archive3">March 2024</a></li>
+                        <li><a href="link/to/archive4">February 2024</a></li>
+                        <li><a href="link/to/archive5">January 2024</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Categories -->
+            <div class="col-md-4">
+                <div class="categories">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="link/to/category1">Dry Cleaning</a></li>
+                        <li><a href="link/to/category2">Laundry Services</a></li>
+                        <li><a href="link/to/category3">Laundry Tips</a></li>
+                        <li><a href="link/to/category4">Shoes Cleaning</a></li>
+                        <li><a href="link/to/category5">Uncategorized</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="pricing" class="pricing-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Pricing</h2>
+                <p>Discover our competitive pricing for various laundry services.</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Most Popular Items -->
+            <div class="col-md-4">
+                <div class="pricing-box" id="most-popular">
+                    <h3>Most Popular Items</h3>
+                    <div class="item"><span>Kemeja (Dry Clean)</span><span>Rp. 42.000</span></div>
+                    <div class="item"><span>Kemeja (Wet Clean)</span><span>Rp. 35.000</span></div>
+                    <div class="item"><span>Blouse (Dry Clean)</span><span>Rp. 42.000</span></div>
+                    <div class="item"><span>Jas (Dry Clean)</span><span>Rp. 53.000</span></div>
+                    <div class="item"><span>Dress (Dry Clean)</span><span>Rp. 55.000</span></div>
+                    <div class="item"><span>Jeans (Wet Clean)</span><span>Rp. 35.000</span></div>
+                    <div class="item"><span>Sweater (Dry Clean)</span><span>Rp. 50.000</span></div>
+                    <div class="item"><span>Sweater (Wet Clean)</span><span>Rp. 43.000</span></div>
+                    <div class="item"><span>Batik (Dry Clean)</span><span>Rp. 46.000</span></div>
+                    <div class="item"><span>Batik (Wet Clean)</span><span>Rp. 39.000</span></div>
+                </div>
+            </div>
+            <!-- Dry Clean -->
+            <div class="col-md-4">
+                <div class="pricing-box" id="dry-clean">
+                    <h3>Dry Clean</h3>
+                    <div class="item"><span>Stel Jas</span><span>Rp. 75.000</span></div>
+                    <div class="item"><span>Jaket</span><span>Rp. 53.000</span></div>
+                    <div class="item"><span>Celana Panjang / Jeans</span><span>Rp. 42.000</span></div>
+                    <div class="item"><span>Stel Baju Safari / Seragam</span><span>Rp. 68.000</span></div>
+                    <div class="item"><span>Dasi</span><span>Rp. 36.000</span></div>
+                    <div class="item"><span>Gaun Pengantin</span><span>Rp. 310.000</span></div>
+                    <div class="item"><span>Baju Haji, Pastur, Iqrom, Toga</span><span>Rp. 62.000</span></div>
+                    <div class="item"><span>Celana Pendek</span><span>Rp. 38.000</span></div>
+                    <div class="item"><span>Over All, Over Coat, Mantel</span><span>Rp. 75.000</span></div>
+                    <div class="item"><span>Rompi</span><span>Rp. 38.000</span></div>
+                    <div class="item"><span>Sapu Tangan</span><span>Rp. 32.000</span></div>
+                    <div class="item"><span>Sarung</span><span>Rp. 42.000</span></div>
+                    <div class="item"><span>Sweater</span><span>Rp. 50.000</span></div>
+                    <div class="item"><span>T-Shirt</span><span>Rp. 41.000</span></div>
+                    <div class="item"><span>Topi, Peci, Blangkon</span><span>Rp. 38.000</span></div>
+                    <div class="item"><span>Stel Baju Olahraga</span><span>Rp. 55.000</span></div>
+                    <div class="item"><span>Jaket, Celana, Mantel Kulit Dll</span><span>Rp. 295.000</span></div>
+                    <div class="item"><span>Jaket Bulu Angsa</span><span>Rp. 98.000</span></div>
+                    <div class="item"><span>Sarung Tangan, Topi Kulit</span><span>Rp. 77.000</span></div>
+                    <div class="item"><span>Over Coat Bulu Angsa</span><span>Rp. 110.000</span></div>
+                    <div class="item"><span>Jaket Semi Kulit</span><span>Rp. 115.000</span></div>
+                    <div class="item"><span>Wearpark / Stel Baju Taekwondo</span><span>Rp. 88.000</span></div>
+                    <div class="item"><span>Blues</span><span>Rp. 42.000</span></div>
+                    <div class="item"><span>Blazer / Jas Wanita</span><span>Rp. 50.000</span></div>
+                    <div class="item"><span>Rok</span><span>Rp. 42.000</span></div>
+                    <div class="item"><span>Gaun (Biasa)</span><span>Rp. 55.000</span></div>
+                    <div class="item"><span>Gaun (1/2 Payet)</span><span>Rp. 66.000</span></div>
+                    <div class="item"><span>Gaun (Full Payet)</span><span>Rp. 78.000</span></div>
+                    <div class="item"><span>Gaun Panjang (Biasa)</span><span>Rp. 60.000</span></div>
+                    <div class="item"><span>Gaun Panjang (1/2 Payet)</span><span>Rp. 73.000</span></div>
+                    <div class="item"><span>Gaun Panjang (Full Payet)</span><span>Rp. 85.000</span></div>
+                    <div class="item"><span>Stel Blus</span><span>Rp. 71.000</span></div>
+                </div>
+            </div>
+            <!-- Wet Clean -->
+            <div class="col-md-4">
+                <div class="pricing-box" id="wet-clean">
+                    <h3>Wet Clean</h3>
+                    <div class="item"><span>Kemeja</span><span>Rp. 35.000</span></div>
+                    <div class="item"><span>Baju Safari, Batik</span><span>Rp. 39.000</span></div>
+                    <div class="item"><span>Jaket</span><span>Rp. 44.000</span></div>
+                    <div class="item"><span>Celana Panjang / Jeans</span><span>Rp. 35.000</span></div>
+                    <div class="item"><span>Stel Baju Safari / Seragam</span><span>Rp. 60.000</span></div>
+                    <div class="item"><span>Baju Haji, Pastur, Iqrom, Toga</span><span>Rp. 55.000</span></div>
+                    <div class="item"><span>Celana Pendek</span><span>Rp. 31.000</span></div>
+                    <div class="item"><span>Over All, Over Coat, Mantel</span><span>Rp. 65.000</span></div>
+                    <div class="item"><span>Sapu Tangan</span><span>Rp. 25.000</span></div>
+                    <div class="item"><span>Sarung</span><span>Rp. 35.000</span></div>
+                    <div class="item"><span>Sweater</span><span>Rp. 43.000</span></div>
+                    <div class="item"><span>T-Shirt</span><span>Rp. 34.000</span></div>
+                    <div class="item"><span>Topi, Peci, Blangkon</span><span>Rp. 31.000</span></div>
+                    <div class="item"><span>Stel Baju Olahraga</span><span>Rp. 45.000</span></div>
+                    <div class="item"><span>Jaket Bulu Angsa</span><span>Rp. 87.000</span></div>
+                    <div class="item"><span>Sarung Tangan, Topi Kulit</span><span>Rp. 67.000</span></div>
+                    <div class="item"><span>Over Coat Bulu Angsa</span><span>Rp. 99.000</span></div>
+                    <div class="item"><span>Jaket Semi Kulit</span><span>Rp. 105.000</span></div>
+                    <div class="item"><span>Wearpark / Stel Baju Taekwondo</span><span>Rp. 78.000</span></div>
+                    <div class="item"><span>Blues</span><span>Rp. 35.000</span></div>
+                    <div class="item"><span>Rok</span><span>Rp. 35.000</span></div>
+                    <div class="item"><span>Gaun (Biasa)</span><span>Rp. 45.000</span></div>
+                    <div class="item"><span>Gaun (1/2 Payet)</span><span>Rp. 56.000</span></div>
+                    <div class="item"><span>Gaun (Full Payet)</span><span>Rp. 68.000</span></div>
+                    <div class="item"><span>Gaun Panjang (Biasa)</span><span>Rp. 50.000</span></div>
+                    <div class="item"><span>Gaun Panjang (1/2 Payet)</span><span>Rp. 63.000</span></div>
+                    <div class="item"><span>Gaun Panjang (Full Payet)</span><span>Rp. 75.000</span></div>
+                    <div class="item"><span>Kebaya, Bluse (Biasa)</span><span>Rp. 46.000</span></div>
+                    <div class="item"><span>Kebaya, Bluse (1/2 Payet)</span><span>Rp. 58.000</span></div>
+                    <div class="item"><span>Kebaya, Bluse (Full Payet)</span><span>Rp. 70.000</span></div>
+                    <div class="item"><span>Stel Bluse</span><span>Rp. 61.000</span></div>
+                    <div class="item"><span>Syal / Scraft</span><span>Rp. 31.000</span></div>
+                    <div class="item"><span>Baju Mandi / Kimono</span><span>Rp. 40.000</span></div>
+                    <div class="item"><span>Rok Panjang</span><span>Rp. 45.000</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="garansi-kami" class="garansi-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Garansi Kami</h2>
+                <p>Garansi Terbaik</p>
+                <p>Getwash Laundry perawatan pakaian terpercaya sejak tahun 2022. Kami akan berusaha semaksimal mungkin untuk mengembalikan pakaian Anda dalam kondisi prima dan siap dikenakan. Dalam kasus yang jarang terjadi ketika ada barang yang hilang atau rusak selama proses pembersihan, kami akan mengganti biaya Anda hingga 5x biaya pencucian.</p>
+                <button id="get-service-now" class="btn btn-primary">Get Service Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal for Request Pickup -->
+<div id="request-pickup-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Request Pickup</h2>
+        <form id="request-pickup-form">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your e-mail address *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Your phone number</label>
+            <input type="text" id="phone" name="phone">
+
+            <label for="address">Address *</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="service">Service</label>
+            <input type="text" id="service" name="service">
+
+            <label for="pickup-date">Pick-Up Date</label>
+            <input type="date" id="pickup-date" name="pickup-date">
+
+            <label for="delivery-date">Delivery Date</label>
+            <input type="date" id="delivery-date" name="delivery-date">
+
+            <label for="comment">Your comment</label>
+            <textarea id="comment" name="comment"></textarea>
+
+            <button type="submit" class="btn btn-primary">Order Now</button>
+        </form>
+    </div>
+</div>
+
+
+<footer>
+    <div class="container text-center">
+        <p>&copy; 2024 Mister Laundry. All rights reserved.</p>
+    </div>
+</footer>
+<script>
+    function showPrintModal(id) {
+        var content = document.getElementById(id).innerHTML;
+        document.getElementById('modalContent').innerHTML = content;
+        $('#printModal').modal('show');
+    }
+
+    function printCoupon() {
+        var content = document.getElementById('modalContent').innerHTML;
+        var originalContent = document.body.innerHTML;
+        document.body.innerHTML = content;
+        window.print();
+        document.body.innerHTML = originalContent;
+        location.reload();
+    }
+    
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function toggleAnswer(faqId) {
+        var answer = document.getElementById(faqId);
+        var plusMinus = answer.previousElementSibling.querySelector('.plus-minus');
+        if (answer.style.display === "none" || answer.style.display === "") {
+            answer.style.display = "block";
+            plusMinus.textContent = "-";
+        } else {
+            answer.style.display = "none";
+            plusMinus.textContent = "+";
+        }
+    }
+    
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const pricingBoxes = document.querySelectorAll(".pricing-box");
+
+    pricingBoxes.forEach(box => {
+        box.addEventListener("click", function() {
+            pricingBoxes.forEach(b => b.classList.remove("active"));
+            this.classList.toggle("active");
+        });
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const getServiceNowButton = document.getElementById("get-service-now");
+    const modal = document.getElementById("request-pickup-modal");
+    const closeButton = document.querySelector(".close-button");
+
+    getServiceNowButton.addEventListener("click", function() {
+        modal.style.display = "block";
+    });
+
+    closeButton.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    const requestPickupForm = document.getElementById("request-pickup-form");
+    requestPickupForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(requestPickupForm);
+
+        fetch('save_request.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert("Your pickup request has been submitted.");
+            modal.style.display = "none";
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+});
+</script>
+</body>
+</html>
